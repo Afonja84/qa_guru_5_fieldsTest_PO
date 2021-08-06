@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    // id 'io.qaneta.allure' version '2.8.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+sourceCompatibility = 11 //версия Java 11
+targetCompatibility = 11 //версия Java 11
+
+dependencies {
+    // Selenide
+    testImplementation('com.codeborne:selenide:5.23.2')
+    //подключается только во время запуска теста, для вывода в консоль логов сторонних библиотек
+    testRuntimeOnly('org.slf4j:slf4j-simple:1.7.32')
+
+    // JUnit 5
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
+}
+
+test {
+    useJUnitPlatform{}
+}
