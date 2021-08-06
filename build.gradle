@@ -16,7 +16,8 @@ targetCompatibility = 11 //версия Java 11
 
 dependencies {
     // Selenide
-    testImplementation('com.codeborne:selenide:5.23.2')
+    testImplementation('com.codeborne:selenide:5.23.2',
+            "com.github.javafaker:javafaker:1.0.2")
     //подключается только во время запуска теста, для вывода в консоль логов сторонних библиотек
     testRuntimeOnly('org.slf4j:slf4j-simple:1.7.32')
 
